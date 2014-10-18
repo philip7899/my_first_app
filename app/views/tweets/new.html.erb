@@ -1,4 +1,8 @@
-Here are where we make new tweets:
+<% flash.each do |key, value| %>
+	<div class="alert alert-<%= key %>">
+		<%= value %>
+	</div>	
+<% end %>
 
 
 <%= simple_form_for @tweet, url: tweets_path, method: 'post' do |f| %>
@@ -13,3 +17,6 @@ Here are where we make new tweets:
 <% end %>
 
 
+<div style="color: blue; font-weight: bold">
+	we are in the div
+</div>
