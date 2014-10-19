@@ -16,6 +16,8 @@ end
 #This is the gem we are using to create forms
 gem 'simple_form'
 
+gem 'devise'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
