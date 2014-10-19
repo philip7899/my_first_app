@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
 	def create
 		@tweet_to_create = Tweet.new(tweet_params)
 		@tweet_to_create.user = current_user
-		
+
 		if @tweet_to_create.save
 			flash.now["success"] = "You have created a tweet"
 		else
@@ -38,7 +38,11 @@ class TweetsController < ApplicationController
 
 
 	def index
+		@users = User.all.reject{|user| user == current_user}
 	end
+
+
+
 
 	def tweet_params
 		return params.require("tweet").permit("content")
