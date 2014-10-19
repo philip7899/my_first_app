@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+
+	before_action :authenticate_user!
+
 	def new
 		@tweet = Tweet.new
 		@tweets = Tweet.all
@@ -6,6 +9,8 @@ class TweetsController < ApplicationController
 
 	def create
 		@tweet_to_create = Tweet.new(tweet_params)
+		@tweet_to_create.user = current_user
+		
 		if @tweet_to_create.save
 			flash.now["success"] = "You have created a tweet"
 		else
@@ -29,6 +34,8 @@ class TweetsController < ApplicationController
 
 	def show
 	end
+
+
 
 	def index
 	end
