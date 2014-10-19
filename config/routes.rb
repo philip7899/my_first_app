@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources "tweets"
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
+    match 'processform', to: 'tweets#process_form_to_follow_user', as: "process_form_to_follow_user", via: ["post"]
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
