@@ -1,7 +1,7 @@
 
 
 <%= simple_form_for @tweet, url: tweets_path, method: 'post' do |f| %>
-	<%= f.input "content" %>
+	<%= f.input "content", style: "width: 500px; height: 500px;" %>
 	<%= f.button "submit", "Create Tweet" %>
 <% end %>
 
